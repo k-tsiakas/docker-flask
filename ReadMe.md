@@ -3,7 +3,8 @@ This is a simple flask application deployed in docker container which displays
 host and client ip
 ```bash
 # create the python/flask image
-sh docker-images/create_flask_image.sh
+cd docker-images
+sh create_flask_image.sh
 # run with
 docker-compose up --build --remove-orphans
 # terminate with
