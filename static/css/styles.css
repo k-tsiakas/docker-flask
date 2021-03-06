@@ -1,0 +1,10 @@
+body {
+  background-color: #1663BE;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  margin-top: 15%;
+}

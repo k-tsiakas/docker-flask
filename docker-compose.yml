@@ -1,0 +1,17 @@
+version: '3'
+services:
+  flask_app:
+    container_name: flask_app
+    hostname: 'flask-host'
+    image: flask_app_image
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    networks:
+      main_network:
+
+
+networks: # network sections, here we can create or define an existing network
+  main_network: #define here a network
+    external: true # it means that we have already created this network
