@@ -1,7 +1,7 @@
 pipeline{
     agent any
 
-    checkout scm
+
     environment{
         PROJECT_NAME = "${env.JOB_NAME}"
         REGISTRY_URL = "172.28.5.10:5000"
@@ -14,9 +14,7 @@ pipeline{
         stage('Fetch'){
             steps{
 
-                git branch: 'master',
-                credentialsId: 'k-tsiakas@github',
-                url: 'https://github.com/k-tsiakas/docker-flask.git'
+                checkout scm
 
                 script{
                     echo "init"
