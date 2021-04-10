@@ -1,7 +1,7 @@
 pipeline{
     agent any
 
-
+    checkout scm
     environment{
         PROJECT_NAME = "${env.JOB_NAME}"
         REGISTRY_URL = "172.28.5.10:5000"
@@ -48,7 +48,7 @@ pipeline{
                           remote.password = password
                           def path = "/home/${HOST_CREDENTIALS_USR}/Desktop/Projects"
                           // create project dir in host
-                          def init_cmd = "mkdir -p ${path}/${PROJECT_NAME}"
+                          def init_cmd = "rm -r ${path}/${PROJECT_NAME} && mkdir -p ${path}/${PROJECT_NAME}"
                           sshCommand remote: remote, command: init_cmd
                           // copy our contents within the dir
                           sshPut remote: remote, from: '.', into: path
