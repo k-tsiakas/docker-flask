@@ -8,10 +8,11 @@ services:
       context: .
     ports:
       - 3000:3000
+    restart: always
     networks:
-      main_network:
+      main_bridge_network:
 
 
 networks: # network sections, here we can create or define an existing network
-  main_network: #define here a network
+  main_bridge_network: #define here a network
     external: true # it means that we have already created this network
